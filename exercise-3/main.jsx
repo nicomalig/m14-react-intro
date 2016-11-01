@@ -11,6 +11,9 @@ var employeeData = [
 // Create an EmployeeRow element to render a row of information for an employee
 var EmployeeRow = React.createClass({
     // Define rendering function
+    render:function() {
+      
+    }
 });
 
 // Create an EmployeeTable element in which to render your EmployeeRows
