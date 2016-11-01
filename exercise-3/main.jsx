@@ -12,7 +12,13 @@ var employeeData = [
 var EmployeeRow = React.createClass({
     // Define rendering function
     render:function() {
-      
+      return (
+        <tr>
+          <td>{this.props.name}</td>
+          <td>{this.props.title}</td>
+          <td>{this.props.salary}</td>
+        </tr>
+      )
     }
 });
 
@@ -31,9 +37,13 @@ var EmployeeTable = React.createClass({
 
 
                         {// Enter employee rows here!!!!
+                          this.props.employeeData.map(function(employee, index) {
+                            return <EmployeeRow   name={employee.name}
+                                                  title={employee.title}
+                                                  salary={employee.salary}
+                            />
+                          })
                         }
-
-
                     </tbody>
                 </table>
             </div>
@@ -42,3 +52,7 @@ var EmployeeTable = React.createClass({
 });
 
 // Render your component in the `main` section
+ReactDOM.render(
+  <EmployeeTable employeeData={employeeData}/>,
+  document.querySelector('main')
+)
